@@ -31,7 +31,7 @@ const userInfo={name:name,pb_key:public_key};
 console.log(user1.getPrime().toString('hex'));
 socket.emit('new-user-joined',userInfo); 
 socket.on('keysE',keys=>{
-    if(keys.length>2){
+    if(keys.length==2){
         if(keys[0]!=user1){
            secret=String(user1.computeSecret(keys[0]));
         }
